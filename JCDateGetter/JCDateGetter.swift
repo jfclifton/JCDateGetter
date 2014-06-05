@@ -40,6 +40,10 @@ extension Int {
         
     }
     
+    func months() -> NSTimeInterval {
+        return NSTimeInterval(self * 2_628_000)
+    }
+    
     func weeks(time: timeSpecifier) -> NSDate {
         var components = NSDateComponents()
         var theDate = NSDate()
@@ -66,6 +70,10 @@ extension Int {
         
     }
     
+    func weeks() -> NSTimeInterval {
+        return NSTimeInterval(self * 604_800)
+    }
+    
     func days(time: timeSpecifier) -> NSDate {
         var components = NSDateComponents()
         var theDate = NSDate()
@@ -89,6 +97,10 @@ extension Int {
         }
         theDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate:theDate, options:nil)
         return theDate
+    }
+    
+    func days() -> NSTimeInterval {
+        return NSTimeInterval(self * 86_400)
     }
     
 }
