@@ -67,4 +67,18 @@ class JCDateGetterTests: XCTestCase {
         // I can't think of a good way to test this
     }
     
+    func testTimeIntervals () {
+        var t1 = 15.days()
+        
+        XCTAssertEqual(t1, 1296000, "15 days should be 1,296,000 seconds")
+        
+        var t2 = 5.weeks()
+        
+        XCTAssertEqual(t2, 3024000, "5 weeks should be 3,024,000 seconds")
+        
+        var t3 = 3.months()
+        
+        XCTAssertEqual(t3, 7884000, "3 months should be 7,884,000 seconds")
+    }
+    
 }
