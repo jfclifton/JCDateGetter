@@ -9,7 +9,7 @@
 import Foundation
 
 enum timeSpecifier {
-    case timeAgo, timeAhead
+    case ago, ahead
 }
 
 extension Int {
@@ -27,10 +27,10 @@ extension Int {
         }
         
         switch time {
-        case timeSpecifier.timeAgo:
+        case .ago:
             ago()
             
-        case timeSpecifier.timeAhead:
+        case .ahead:
             ahead()
         default:
             println("Error")
@@ -38,6 +38,10 @@ extension Int {
         theDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate:theDate, options:nil)
         return theDate
         
+    }
+    
+    func months() -> NSTimeInterval {
+        return NSTimeInterval(self * 2_628_000)
     }
     
     func weeks(time: timeSpecifier) -> NSDate {
@@ -53,10 +57,10 @@ extension Int {
         }
         
         switch time {
-        case timeSpecifier.timeAgo:
+        case .ago:
             ago()
             
-        case timeSpecifier.timeAhead:
+        case .ahead:
             ahead()
         default:
             println("Error")
@@ -64,6 +68,10 @@ extension Int {
         theDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate:theDate, options:nil)
         return theDate
         
+    }
+    
+    func weeks() -> NSTimeInterval {
+        return NSTimeInterval(self * 604_800)
     }
     
     func days(time: timeSpecifier) -> NSDate {
@@ -79,16 +87,20 @@ extension Int {
         }
         
         switch time {
-        case timeSpecifier.timeAgo:
+        case .ago:
             ago()
             
-        case timeSpecifier.timeAhead:
+        case .ahead:
             ahead()
         default:
             println("Error")
         }
         theDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate:theDate, options:nil)
         return theDate
+    }
+    
+    func days() -> NSTimeInterval {
+        return NSTimeInterval(self * 86_400)
     }
     
 }
