@@ -10,8 +10,9 @@ How to use:
 Add "JCDateGetter.swift" file to your project
 ```
 // Get NSDate for 3 days ago
-var threeDaysAgo = 3.days(timeSpecifier.timeAgo)
+var threeDaysAgo = 3.days(.ago)
+        
 
 // Get NSDate for 3 days ahead
-var threeDaysAhead = 3.days(timeSpecifier.timeAhead)
+var threeDaysAhead = 3.days(.ahead)
 ```
