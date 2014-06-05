@@ -13,9 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var threeDaysAgo = 3.days(timeSpecifier.timeAgo)
+        var threeDaysAgo = 3.days(.ago)
         
-        var threeDaysAhead = 3.days(timeSpecifier.timeAhead)
+        var threeDaysAhead = 3.days(.ahead)
         
         println("Three days ago: \(threeDaysAgo) \nThree days ahead: \(threeDaysAhead)")
     }

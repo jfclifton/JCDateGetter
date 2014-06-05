@@ -9,7 +9,7 @@
 import Foundation
 
 enum timeSpecifier {
-    case timeAgo, timeAhead
+    case ago, ahead
 }
 
 extension Int {
@@ -27,10 +27,10 @@ extension Int {
         }
         
         switch time {
-        case timeSpecifier.timeAgo:
+        case .ago:
             ago()
             
-        case timeSpecifier.timeAhead:
+        case .ahead:
             ahead()
         default:
             println("Error")
@@ -53,10 +53,10 @@ extension Int {
         }
         
         switch time {
-        case timeSpecifier.timeAgo:
+        case .ago:
             ago()
             
-        case timeSpecifier.timeAhead:
+        case .ahead:
             ahead()
         default:
             println("Error")
@@ -79,10 +79,10 @@ extension Int {
         }
         
         switch time {
-        case timeSpecifier.timeAgo:
+        case .ago:
             ago()
             
-        case timeSpecifier.timeAhead:
+        case .ahead:
             ahead()
         default:
             println("Error")
